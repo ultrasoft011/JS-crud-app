@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+.grocery-container {
+  visibility: hidden;
+}
+
+.grocery-item {
+  background-color: blueviolet;
+}
+
+.show-container {
+  visibility: visible;
+}
+
+.alert-danger {
+  color: red;
+  font-weight: bold;
+}
+
+.alert-success {
+  color: green;
+  font-weight: bold;
+}
