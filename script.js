@@ -56,7 +56,13 @@ function addItem(e) {
     displayAlert("Added succesfully", "success");
     // Render the container
     container.classList.add("show-container");
-    console.log(container);
+    // console.log(container);
+
+    // Add to local storage
+    addToLocalStorage(id, value);
+
+    // Default value in the text placeholder
+    setToDefaultValue();
   } else if (value && editFlag) {
     console.log("editing");
   } else {
@@ -74,4 +80,16 @@ function displayAlert(text, action) {
     alert.textContent = "";
     alert.classList.remove(`alert-${action}`);
   }, 4000);
+}
+
+// Default value
+function setToDefaultValue() {
+  grocery.value = "";
+  grocery.placerholder = "e.g eggs";
+  console.log("Default");
+}
+
+// Local Storage
+function addToLocalStorage() {
+  console.log("local Storage");
 }
