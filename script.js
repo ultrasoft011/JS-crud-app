@@ -9,6 +9,7 @@ const grocery = document.getElementById("grocery");
 const submitBtn = document.querySelector(".submit-btn");
 const container = document.querySelector(".grocery-container");
 const list = document.querySelector(".grocery-list");
+const clearButton = document.querySelector(".clear-btn");
 
 // Edit options
 let editElement;
@@ -70,6 +71,20 @@ function addItem(e) {
   }
 }
 
+// Function: clear all items
+clearButton.addEventListener("click", function () {
+  const items = document.querySelectorAll(".grocery-item");
+
+  if (items.length > 0) {
+    items.forEach(function (item) {
+      list.removeChild(item);
+    });
+  }
+
+  container.classList.remove("show-container");
+  displayAlert("Empty list", "success");
+});
+
 // Function: display alert
 function displayAlert(text, action) {
   alert.textContent = text;
@@ -85,7 +100,9 @@ function displayAlert(text, action) {
 // Default value
 function setToDefaultValue() {
   grocery.value = "";
-  grocery.placerholder = "e.g eggs";
+  editFlag = false;
+  editID = "";
+  submitBtn.textContent = "submit";
   console.log("Default");
 }
 
